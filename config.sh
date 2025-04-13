@@ -2,7 +2,9 @@
 
 param1=${1:-}
 
-export RUST_COMMIT=9096f4fafa2ac2d771f866337b4ee7064cde8575
+# Replace the rust commit and version with the one you want to use
+export RUST_COMMIT=05f9846f893b09a1be1fc8560e33fc3c815cfecb
+export RUST_VERSION=1.86.0 
 
 # If -rust_commit specified then only export the rust commit variable
 if [ "$param1" == "-rust_commit" ]; then
@@ -32,7 +34,8 @@ fi
 export TOOLCHAIN_NAME=rve-nightly
 
 # Artifact name should be versioned as it is only used at install time.
-export ARTIFACT_NAME=rust-rve-nightly-$rust_commit_date-$TOOLCHAIN_HOST_TRIPLET
+# export ARTIFACT_NAME=rust-rve-nightly-$rust_commit_date-$TOOLCHAIN_HOST_TRIPLET
+export ARTIFACT_NAME=rust-rve-${RUST_VERSION}-dev-$rust_commit_date-$TOOLCHAIN_HOST_TRIPLET
 
 if [ "$param1" == "-artifact_name" ]; then
     echo "ARTIFACT_NAME=$ARTIFACT_NAME" >> $GITHUB_ENV
