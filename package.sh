@@ -26,15 +26,25 @@ cd dist
 mkdir unpack
 cd unpack
 
-inst "rustc-nightly-$TOOLCHAIN_HOST_TRIPLET"
-inst "rust-std-nightly-$TOOLCHAIN_HOST_TRIPLET"
-inst "rust-std-nightly-riscv32em-unknown-none-elf"
-inst "rust-std-nightly-riscv32ema-unknown-none-elf"
-inst "rust-std-nightly-riscv64ema-unknown-none-elf"
-inst "cargo-nightly-$TOOLCHAIN_HOST_TRIPLET"
-inst "rust-src-nightly"
-inst "rustfmt-nightly-$TOOLCHAIN_HOST_TRIPLET"
-inst "clippy-nightly-$TOOLCHAIN_HOST_TRIPLET"
+# inst "rustc-nightly-$TOOLCHAIN_HOST_TRIPLET"
+# inst "rust-std-nightly-$TOOLCHAIN_HOST_TRIPLET"
+# inst "rust-std-nightly-riscv32em-unknown-none-elf"
+# inst "rust-std-nightly-riscv32ema-unknown-none-elf"
+# inst "rust-std-nightly-riscv64ema-unknown-none-elf"
+# inst "cargo-nightly-$TOOLCHAIN_HOST_TRIPLET"
+# inst "rust-src-nightly"
+# inst "rustfmt-nightly-$TOOLCHAIN_HOST_TRIPLET"
+# inst "clippy-nightly-$TOOLCHAIN_HOST_TRIPLET"
+
+inst "rustc-${RUST_VERSION}-dev-$TOOLCHAIN_HOST_TRIPLET"
+inst "rust-std-${RUST_VERSION}-dev-$TOOLCHAIN_HOST_TRIPLET"
+inst "rust-std-${RUST_VERSION}-dev-riscv32em-unknown-none-elf"
+inst "rust-std-${RUST_VERSION}-dev-riscv32ema-unknown-none-elf"
+inst "rust-std-${RUST_VERSION}-dev-riscv64ema-unknown-none-elf"
+inst "cargo-${RUST_VERSION}-dev-$TOOLCHAIN_HOST_TRIPLET"
+inst "rust-src-${RUST_VERSION}-dev"
+inst "rustfmt-${RUST_VERSION}-dev-$TOOLCHAIN_HOST_TRIPLET"
+inst "clippy-${RUST_VERSION}-dev-$TOOLCHAIN_HOST_TRIPLET"
 
 cd ..
 rm -rf unpack
